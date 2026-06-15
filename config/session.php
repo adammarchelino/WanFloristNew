@@ -21,9 +21,12 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (empty($_SESSION['id_pengguna'])) {
-    // Simpan URL yang dituju untuk redirect kembali setelah login (opsional)
-    $_SESSION['intended_url'] = $_SERVER['REQUEST_URI'] ?? '';
+    http_response_code(401);
 
-    header('Location: /login.php', true, 302);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Session login berakhir.'
+    ]);
+
     exit;
 }
