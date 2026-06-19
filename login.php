@@ -32,7 +32,7 @@ if (
     $sisa_detik    = 900 - (time() - $attempts_data['first_try']);
     $sisa_menit    = (int) ceil($sisa_detik / 60);
     $error_message = 'Terlalu banyak percobaan login. Akses dari IP Anda diblokir sementara. '
-                   . 'Coba lagi dalam ±' . $sisa_menit . ' menit.';
+                . 'Coba lagi dalam ±' . $sisa_menit . ' menit.';
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$blocked) {
