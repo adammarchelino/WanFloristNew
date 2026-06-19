@@ -6,8 +6,8 @@ $pdo = get_pdo();
 
 $stmt_kategori = $pdo->prepare(
     "SELECT * FROM kategori
-     WHERE is_active = 1
-     ORDER BY nama_kategori ASC"
+    WHERE is_active = 1
+    ORDER BY nama_kategori ASC"
 );
 $stmt_kategori->execute();
 $categories = $stmt_kategori->fetchAll(PDO::FETCH_ASSOC);
